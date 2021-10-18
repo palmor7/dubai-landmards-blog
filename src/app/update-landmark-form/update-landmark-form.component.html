@@ -1,0 +1,49 @@
+<div class="outer-wrapper">
+    <form [formGroup]="updateForm" class="form" (ngSubmit)="onUpdate()">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required">Title is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="url">Official page url</label>
+            <input type="text" formControlName="url" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.url.errors }" />
+            <div *ngIf="submitted && f.url.errors" class="invalid-feedback">
+                <div *ngIf="f.url.errors.required">Url is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="shortInfo">Short info</label>
+            <textarea type="text" formControlName="shortInfo" class="form-control short-info" [ngClass]="{ 'is-invalid': submitted && f.shortInfo.errors }" >
+            </textarea>
+            <div *ngIf="submitted && f.shortInfo.errors" class="invalid-feedback">
+                <div *ngIf="f.shortInfo.errors.required">short info is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" >
+            </textarea>
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required">Description is required</div>
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Coordinates</span>
+            </div>
+            <input type="number" formControlName="lat" class="form-control">
+            <input type="number" formControlName="lng" class="form-control">
+        </div>
+        <div class="form-group text-center">
+            <button class="update-btn">
+                Update
+            </button>
+            <button class="cancel-btn" (click)="activeModal.close()">
+                Cancel
+            </button>
+        </div>
+    </form>      
+</div>

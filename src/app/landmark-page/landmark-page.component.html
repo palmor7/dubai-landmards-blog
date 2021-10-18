@@ -1,0 +1,10 @@
+<ng-container *ngIf="landmark">
+    <app-landmark-card [landmark]="landmark" [isInFullDescription]="true"></app-landmark-card>
+    <h2 class="description">Description</h2>
+    <p class="pt-3">{{landmark.description}}</p>
+    <div class="mb-5">
+        <agm-map [latitude]="landmark.location[1]" [longitude]="landmark.location[0]">
+            <agm-marker [latitude]="landmark.location[1]" [longitude]="landmark.location[0]"></agm-marker>
+        </agm-map>
+    </div>
+</ng-container>

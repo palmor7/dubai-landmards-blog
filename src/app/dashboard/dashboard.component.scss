@@ -1,0 +1,36 @@
+.wrapper {
+    min-width: 160px;
+    text-align: center;
+  }
+
+.outer-wrapper {
+  max-width: 540px;
+}
+
+.card-wrapper {
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;  
+}
+
+.card-img {
+  height: 200px;
+  width: 160px;
+}
+
+.title {
+  width: 160px;
+}
+
+@media only screen and (max-width: 450px) {
+  .wrapper {
+    min-width: 110px;
+    max-width: 110px;
+    text-align: center;
+  }
+
+  .card-img {
+    height: 150px;
+    width: 110px;
+  }
+}

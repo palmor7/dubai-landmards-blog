@@ -1,0 +1,5 @@
+<div class="outer-container">
+    <div *ngFor="let landmark of landmarks$ | async" class="pb-4">
+        <app-landmark-card [landmark]="landmark"></app-landmark-card>
+    </div>
+</div>

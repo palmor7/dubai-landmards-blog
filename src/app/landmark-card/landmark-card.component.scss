@@ -1,0 +1,90 @@
+.photo-thumb:hover {
+    cursor: zoom-in;
+}
+
+.isInDashboard {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: white;
+}
+
+.isInDashboard:hover {
+    background-color: rgb(206, 87, 87);
+}
+
+.photo-thumb {
+    max-height: 250px;
+    .inDashboard {
+        max-height: 100px !important;
+    }
+ }
+
+ .img-wrapper {
+     display: flex;
+     position: relative;
+     max-height: 250px;
+     max-width: 250px;
+     width: 100%;
+ }
+
+ .outer-wrapper {
+     background-color: white;
+ }
+
+ .border-y {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+
+
+ .title {
+    cursor: pointer;
+    &:hover {
+        color: rgb(90, 105, 4);
+    }
+ }
+
+ @media only screen and (max-width: 668px) {
+     .short-info {
+         padding-top: 20px;
+     }
+
+    .inner-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.shake:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: 1s;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.link {
+    position: absolute;
+    bottom: -20px;
+    align-self: center;
+    font-size: 12px;
+
+}
+
+@media only screen and (max-width: 668px) {
+   .img-wrapper-full-page {
+        padding-left: 1rem!important;
+        justify-content: center;
+   }
+}

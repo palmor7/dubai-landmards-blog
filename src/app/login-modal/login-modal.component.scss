@@ -1,0 +1,25 @@
+::ng-deep .modal-content  {
+  text-align: center;
+  border-radius: 20px 20px;
+}
+
+h3 {
+    font-size: 72px;
+    background: linear-gradient(135deg, #939f5a 0%, #6e6d32 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.submitBtn{
+    width: 75%;
+    height: 2.5rem;
+    position: relative;
+    background: linear-gradient(135deg, #939f5a 0%, #6e6d32 70%);
+    color: white;
+    outline: none;
+    border: {
+        style: none;
+        radius: 15px;
+    }
+    transition: .3s ease-in-out;
+}

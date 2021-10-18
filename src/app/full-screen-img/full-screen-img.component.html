@@ -1,0 +1,6 @@
+<div *ngIf="open" class="viewer-container">
+    <div class="viewer-content">
+      <button class="btn-close btn-close-white close-button" (click)="close.emit()"></button>
+      <img class="main-img" [src]="imgSrc"/>
+    </div>
+</div>

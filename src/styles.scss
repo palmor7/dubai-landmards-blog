@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    min-height: 100vh; 
+    font-family: 'Nanum Myeongjo', serif !important;
+}
+
+.dashboard-bg {
+    background-image: linear-gradient(to top, #bf7aff 0%, #30cfd0 100%);
+}

@@ -1,0 +1,54 @@
+.outer-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+img {
+    max-width: 300px;
+    max-height: 250px;
+    align-self: center;
+}
+
+.update-form {
+    margin-top: 35px;
+}
+
+.form-group {
+    padding-top: 10px;
+}
+
+.input-group {
+    padding-top: 10px;
+}
+
+textarea {
+    min-height: 300px;
+    &.short-info {
+        min-height: 200px;
+    }
+}
+
+.update-btn{
+    width: 75%;
+    height: 2.5rem;
+    margin-top: 30px;
+    background: linear-gradient(135deg, #939f5a 0%, #6e6d32 70%);
+    color: white;
+    border: {
+        style: none;
+        radius: 15px;
+    }
+}
+
+.cancel-btn {
+    width: 75%;
+    height: 2.5rem;
+    margin-top: 30px;
+    background: linear-gradient(135deg, #4f504b 0%, #000000 70%);
+    color: white;
+    border: {
+        style: none;
+        radius: 15px;
+    }
+}

@@ -1,0 +1,16 @@
+
+
+  <h1 class="text-center mt-5">Select a landmark to edit</h1>
+  <div class="d-flex justify-content-center">
+    <div class="d-flex flex-wrap justify-content-center outer-wrapper">
+      <div *ngFor="let landmark of landmarks$ | async" class="d-flex card-wrapper" (click)="onClick(landmark)">
+        <div class="wrapper">
+          <div>
+            <img class="card-img" [src]="landmark.photo_thumb.url">
+          </div>
+          <div>
+            <span class="title">{{landmark.title}}</span>
+          </div>
+      </div>
+    </div>
+  </div>
