@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output, ViewEncapsulation } from "@angular/core";
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: 'app-full-screen-img',
@@ -6,25 +6,22 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output, ViewEncap
   styleUrls: ['./full-screen-img.component.scss'],
 })
 export class FullScreenImgComponent implements OnInit {
+  @Input()
+  imgSrc: string;
+  @Input()
+  open: boolean;
 
-    @Input()
-    imgSrc: string;
-    @Input()
-    open: boolean;
+  @Output()
+  close: EventEmitter<boolean> = new EventEmitter();
 
-    @Output()
-    close: EventEmitter<boolean> = new EventEmitter();
-
-    @HostListener('document:keydown', ['$event'])
-    onKeyPress(event) {
-      if ((event.key !== undefined && event.key === 'Esc') || event.key === 'Escape') {
-        this.close.emit();
-      }
+  @HostListener('document:keydown', ['$event'])
+  onKeyPress(event) {
+    if ((event.key !== undefined && event.key === 'Esc') || event.key === 'Escape') {
+      this.close.emit();
     }
+  }
 
-    constructor() {}
-  
-    ngOnInit() {
-    
-    }
+  constructor() {}
+
+  ngOnInit() {}
 }

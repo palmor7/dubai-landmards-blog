@@ -18,14 +18,10 @@ img {
     padding-top: 10px;
 }
 
-.input-group {
-    padding-top: 10px;
-}
-
 textarea {
-    min-height: 300px;
+    min-height: 250px;
     &.short-info {
-        min-height: 200px;
+        min-height: 150px;
     }
 }
 

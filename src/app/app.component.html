@@ -4,11 +4,11 @@
       <div>
         <img class="logo" src="../assets/dubai-logo.png" alt="">
       </div>
-      <div class="btn-wrapper pt-2">
-        <button class="btn me-1" (click)="navigateToHome()">
+      <div class="pt-2">
+        <button class="btn me-1" [routerLink]="'/dubai-landmarks'">
           Home
         </button>
-        <button *ngIf="!isLoggedIn" class="btn me-1" (click)="open()">
+        <button *ngIf="!isLoggedIn" class="btn me-1" (click)="openLoginForm()">
           Login
         </button>
         <button *ngIf="isLoggedIn" class="btn me-1" [routerLink]="'/dashboard'">

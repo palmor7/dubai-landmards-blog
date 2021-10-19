@@ -18,17 +18,17 @@ export class LoginModalComponent implements OnInit {
   submitted = false;
 
   constructor(
-      private formBuilder: FormBuilder,
-      private landmarksService: LandmarksService,
-      private router: Router,
-      private activeModal: NgbActiveModal
+    private formBuilder: FormBuilder,
+    private landmarksService: LandmarksService,
+    private router: Router,
+    private activeModal: NgbActiveModal
   ) {}
 
   ngOnInit() {
-      this.loginForm = this.formBuilder.group({
-          username: ['', Validators.required],
-          password: ['', Validators.required]
-      });
+    this.loginForm = this.formBuilder.group({
+        username: ['', Validators.required],
+        password: ['', Validators.required]
+    });
   }
 
   get f() { return this.loginForm.controls; }
@@ -45,14 +45,15 @@ export class LoginModalComponent implements OnInit {
       password: this.f.password.value
     };
 
-    this.landmarksService.login(loginRequest).subscribe((user) => {
+    this.landmarksService.login(loginRequest).subscribe(user => {
       this.activeModal.close();
       this.loading = false;
       localStorage.setItem('session-token', user.sessionToken);
-      this.landmarksService.setUserLoggedIn();
+      this.landmarksService.checkUserLoggedIn();
       this.router.navigate(['/dashboard']);
     }, error => {
         this.loading = false;
+        this.submitted = false;
         this.loginForm.reset();
         this.serverError = error.error.errorMessage.message;
     });

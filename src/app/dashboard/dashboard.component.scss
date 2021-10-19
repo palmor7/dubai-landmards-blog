@@ -1,9 +1,7 @@
-.wrapper {
-    min-width: 160px;
-    text-align: center;
-  }
-
 .outer-wrapper {
+  background-color: #f3f3f3;;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
   max-width: 540px;
 }
 
@@ -11,6 +9,11 @@
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;  
+}
+
+.card-inner-wrapper {
+  min-width: 160px;
+  text-align: center;
 }
 
 .card-img {
@@ -23,7 +26,7 @@
 }
 
 @media only screen and (max-width: 450px) {
-  .wrapper {
+  .card-inner-wrapper {
     min-width: 110px;
     max-width: 110px;
     text-align: center;

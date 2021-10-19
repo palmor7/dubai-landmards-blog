@@ -1,7 +1,7 @@
 <div class="outer-wrapper">
     <form [formGroup]="updateForm" class="form" (ngSubmit)="onUpdate()">
         <div class="form-group">
-            <label for="title">Title</label>
+            <label for="title"><b>Title</b></label>
             <input type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
             <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
                 <div *ngIf="f.title.errors.required">Title is required</div>
@@ -30,18 +30,30 @@
                 <div *ngIf="f.description.errors.required">Description is required</div>
             </div>
         </div>
-        <div class="input-group">
-            <div class="input-group-prepend">
+        <div class="form-group">
+            <!-- <div class="input-group-prepend">
                 <span class="input-group-text">Coordinates</span>
+            </div> -->
+            <label >Coordinates</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Lat</span>
+                </div>
+                <input type="number" formControlName="lat" class="form-control">
             </div>
-            <input type="number" formControlName="lat" class="form-control">
-            <input type="number" formControlName="lng" class="form-control">
+            <!-- <input type="number" formControlName="lat" class="form-control"> -->
+            <div class="input-group pt-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Lng</span>
+                </div>
+                <input type="number" formControlName="lng" class="form-control">
+            </div>
         </div>
         <div class="form-group text-center">
             <button class="update-btn">
                 Update
             </button>
-            <button class="cancel-btn" (click)="activeModal.close()">
+            <button type="button" class="cancel-btn" (click)="activeModal.close()">
                 Cancel
             </button>
         </div>

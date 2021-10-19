@@ -10,7 +10,6 @@ import { LandmarksService } from 'src/service/landmarks.service';
   styleUrls: ['./update-landmark-form.component.scss']
 })
 export class UpdateLandmarkFormComponent implements OnInit {
-
   @Input()
   landmark;
 
@@ -19,7 +18,7 @@ export class UpdateLandmarkFormComponent implements OnInit {
   
   constructor(private formBuilder: FormBuilder, private landmarksService: LandmarksService, public activeModal: NgbActiveModal) {}
   
-    ngOnInit() {
+  ngOnInit() {
     this.buildForm();
   }
 
@@ -31,8 +30,8 @@ export class UpdateLandmarkFormComponent implements OnInit {
       shortInfo: [this.landmark?.short_info ? this.landmark.short_info : '', Validators.required],
       description: [this.landmark?.description ? this.landmark.description : '', Validators.required],
       url: [this.landmark?.url ? this.landmark.url : '', Validators.required],
-      lat: [this.landmark?.location ? this.landmark.location[1] : '', Validators.required],
-      lng: [this.landmark?.location ? this.landmark.location[0] : '', Validators.required],
+      lat: [this.landmark?.location ? this.landmark.location[0] : '', Validators.required],
+      lng: [this.landmark?.location ? this.landmark.location[1] : '', Validators.required],
       
     });
   }
@@ -50,9 +49,8 @@ export class UpdateLandmarkFormComponent implements OnInit {
       location: [this.f.lat.value, this.f.lng.value]
     };
 
-    this.landmarksService.updateLandmark(this.landmark.objectId, loginRequest)
-      .subscribe(() => {
+    this.landmarksService.updateLandmark(this.landmark.objectId, loginRequest).subscribe(() => {
         this.activeModal.close();
-      }, error => noop);
+    }, error => noop);
 }
 }

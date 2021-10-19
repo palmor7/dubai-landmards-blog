@@ -1,11 +1,16 @@
-
-
 .inner-wrapper {
     max-width: 1200px;
     padding-right: 30px;
     padding-left: 30px;
+    margin-bottom: 70px !important;
     margin: auto;
 }
+
+// .nav-bg-img {
+//     background-image: url(../assets/palm-jumeirah.jpg);
+//     background-size: cover;
+//     background-position: center;
+// }
 
 .logo {
     height: 180px;
@@ -17,9 +22,34 @@
 }
 
 .btn:hover {
-    background-color: #072031;
+    background-color: rgb(90, 105, 4);
     color: white;
     border-color: white;
+}
+
+@media only screen and (max-width: 339px) {
+    .logout-btn {
+        margin-top: 5px;
+    }
+}
+
+.header-title {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    font-size: 3.5rem;
+}
+
+@media only screen and (max-width: 668px) {
+    .bg-wrapper {
+        height: 760px !important;
+    }
 }
 
 .bg-wrapper {
@@ -45,29 +75,4 @@
     max-width: none;
     transform: translate3d(0px, 0px, 0px);
     opacity: 0.6;
-}
-
-.header-title {
-    height: 450px;
-    display: flex;
-    justify-content: center;
-    /* vertical-align: middle; */
-    align-items: center;
-}
-
-.title {
-    text-align: center;
-    color: white;
-    font-size: 3.5rem;
-}
-
-.nav-bg-img {
-    background-image: url(../assets/palm-jumeirah.jpg);
-    background-size: cover;
-    background-position: center;
-}
-@media only screen and (max-width: 339px) {
-    .logout-btn {
-        margin-top: 5px;
-    }
 }

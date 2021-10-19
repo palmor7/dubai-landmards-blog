@@ -1,13 +1,13 @@
-export class Landmark {
+import { PhotoResource } from "./photo-resource";
 
+export class Landmark {
     "title": string;
+    "short_info": string;
     "createdAt": string;
     "updatedAt": string;
     "url": string;
-    "short_info": string;
-    "photo": any;
-    "photo_thumb": any;
+    "photo": PhotoResource;
+    "photo_thumb": PhotoResource;
     "location": [];
     "objectId": string;
-    
 }

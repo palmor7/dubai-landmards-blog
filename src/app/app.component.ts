@@ -17,30 +17,23 @@ export class AppComponent implements OnInit {
   constructor(private modalService: NgbModal, public landmarksService: LandmarksService, private router: Router) {}
   
   ngOnInit() {
-
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
         this.isInHomePage = event.urlAfterRedirects === '/dubai-landmarks';
     });
 
-      
-    this.landmarksService.isLoggedIn$.subscribe(loggedIn => {
-      this.isLoggedIn = loggedIn;
-    });
-    this.landmarksService.setUserLoggedIn();
+    this.landmarksService.isLoggedIn$.subscribe(loggedIn => this.isLoggedIn = loggedIn);
+  
+    this.landmarksService.checkUserLoggedIn();
   }
 
-  open() {
+  openLoginForm() {
     this.modalService.open(LoginModalComponent);
-  }
-
-  navigateToHome() {
-    this.router.navigate(['/dubai-landmarks']);
   }
 
   logout() {
     this.landmarksService.logout().subscribe(() => {
       localStorage.removeItem('session-token');
-      this.landmarksService.setUserLoggedIn();
+      this.landmarksService.checkUserLoggedIn();
       this.router.navigate(['/']);
     });
   }

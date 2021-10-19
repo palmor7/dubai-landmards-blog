@@ -8,21 +8,18 @@ import { Landmark } from "src/models/landmark.model";
   styleUrls: ['./landmark-card.component.scss']
 })
 export class LandmarkCardComponent implements OnInit {
+  @Input()
+  landmark: Landmark;
+  @Input()
+  isInFullDescription = false;
 
-    @Input()
-    landmark: Landmark;
-    @Input()
-    isInFullDescription = false;
+  viewerOpen = false;
 
-    viewerOpen = false;
+  constructor(private router: Router) {}
 
-    constructor(private router: Router) {}
-  
-    ngOnInit() {
-    
-    }
+  ngOnInit() {}
 
-    onTitleClick() {
-      this.router.navigate([`dubai-landmarks/${this.landmark.objectId}`]);
-    }
+  onTitleClick() {
+    this.router.navigate([`dubai-landmarks/${this.landmark.objectId}`]);
+  }
 }

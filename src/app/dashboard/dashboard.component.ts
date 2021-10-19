@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   onClick(landmark) {
     this.landmarksService.getLandmark(landmark.objectId).subscribe(landmark => {
-      const modalRef = this.modalService.open(UpdateLandmarkFormComponent);
+      const modalRef = this.modalService.open(UpdateLandmarkFormComponent, {size: 'lg'});
       modalRef.componentInstance.landmark = landmark;
     });
   }
