@@ -14,7 +14,8 @@
         <button *ngIf="isLoggedIn" class="btn me-1" [routerLink]="'/dashboard'">
           Dashboard
         </button>
-        <button *ngIf="isLoggedIn" class="btn logout-btn" (click)="logout()">
+        <button *ngIf="isLoggedIn" [disabled]="loading" class="btn logout-btn position-relative" (click)="logout()">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm loading"></span>
           Logout
         </button>
       </div>

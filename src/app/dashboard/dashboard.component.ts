@@ -11,7 +11,9 @@ import { UpdateLandmarkFormComponent } from '../update-landmark-form/update-land
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit, OnDestroy {
+  loading = false;
   landmarks$: Observable<Landmark[]>;
+  updatingLandmarkIndex: number;
 
   constructor(public landmarksService: LandmarksService, private modalService: NgbModal) {}
   
@@ -24,9 +26,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
     document.body.classList.remove('dashboard-bg');
   }
 
-  onClick(landmark) {
+  onClick(landmark, index) {
+    this.updatingLandmarkIndex = index;
+    this.loading = true;
     this.landmarksService.getLandmark(landmark.objectId).subscribe(landmark => {
       const modalRef = this.modalService.open(UpdateLandmarkFormComponent, {size: 'lg'});
+      this.loading = false;
       modalRef.componentInstance.landmark = landmark;
     });
   }

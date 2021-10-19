@@ -37,3 +37,19 @@
     width: 110px;
   }
 }
+
+.loading {
+  position: absolute;
+  top: 86px;
+  right: 63px;
+  width: 30px;
+  height: 30px;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.disabled-card {
+  opacity: 0.3;
+}

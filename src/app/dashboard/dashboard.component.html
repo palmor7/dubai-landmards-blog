@@ -1,8 +1,10 @@
+<div *ngIf="!(landmarks$ | async).length" class="spinner-border spinner" role="status"></div>
 <h1 class="text-center mt-5">Select a landmark to edit</h1>
-<div class="d-flex justify-content-center mb-5">
+<div class="d-flex justify-content-center mb-5" [ngClass]="{'disabled': loading}">
   <div class="d-flex flex-wrap justify-content-center outer-wrapper">
-    <div *ngFor="let landmark of landmarks$ | async" class="d-flex card-wrapper" (click)="onClick(landmark)">
-      <div class="card-inner-wrapper">
+    <div *ngFor="let landmark of landmarks$ | async; let i = index" class="d-flex card-wrapper position-relative" (click)="onClick(landmark, i)">
+      <span *ngIf="loading && updatingLandmarkIndex === i" class="spinner-border spinner-border-sm loading"></span>
+      <div class="card-inner-wrapper" [ngClass]="{'disabled-card': loading && updatingLandmarkIndex === i}">
         <div>
           <img class="card-img" [src]="landmark.photo_thumb.url">
         </div>

@@ -110,20 +110,18 @@
     text-align: center;
 }
 
-
-
-
-
-  .read-btn {
+.read-btn {
     background: #ffffffbf;
     outline: none !important;
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
     border: 1px solid #000;
+    margin-bottom: 5px;
     z-index: 1;
-  }
-  .read-btn:after {
+}
+
+.read-btn:after {
     position: absolute;
     content: "";
     width: 0;
@@ -133,14 +131,17 @@
     z-index: -1;
     background: rgb(90, 105, 4);
     transition: all 0.3s ease;
-  }
-  .read-btn:hover {
+}
+
+.read-btn:hover {
     color: #fff;
-  }
-  .read-btn:hover:after {
+}
+
+.read-btn:hover:after {
     left: 0;
     width: 100%;
-  }
-  .read-btn:active {
+}
+
+.read-btn:active {
     top: 2px;
-  }
+}

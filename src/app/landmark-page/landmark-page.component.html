@@ -1,3 +1,4 @@
+<div *ngIf="!landmark" class="spinner-border spinner" role="status"></div>
 <div class="wrapper" *ngIf="landmark">
     <div class="d-flex justify-content-center">
         <h1 class="title text-center">{{landmark.title}}</h1>
@@ -6,7 +7,7 @@
     <h2 class="description mt-5">Description</h2>
     <p class="pt-3">{{landmark.description}}</p>
     <div class="mb-5">
-        <agm-map [latitude]="landmark.location[0]" [longitude]="landmark.location[1]">
+        <agm-map [latitude]="landmark.location[0]" [longitude]="landmark.location[1]" [zoom]="13">
             <agm-marker [latitude]="landmark.location[0]" [longitude]="landmark.location[1]"></agm-marker>
         </agm-map>
     </div>

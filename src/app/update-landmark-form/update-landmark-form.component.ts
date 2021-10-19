@@ -15,6 +15,7 @@ export class UpdateLandmarkFormComponent implements OnInit {
 
   updateForm: FormGroup;
   submitted = false;
+  loading = false;
   
   constructor(private formBuilder: FormBuilder, private landmarksService: LandmarksService, public activeModal: NgbActiveModal) {}
   
@@ -38,7 +39,9 @@ export class UpdateLandmarkFormComponent implements OnInit {
 
   onUpdate() {
     this.submitted = true;
+    this.loading = true;
     if (this.updateForm.invalid) {
+        this.loading = false;
         return;
     }
     const loginRequest = {
@@ -50,7 +53,8 @@ export class UpdateLandmarkFormComponent implements OnInit {
     };
 
     this.landmarksService.updateLandmark(this.landmark.objectId, loginRequest).subscribe(() => {
+        this.loading = false;
         this.activeModal.close();
-    }, error => noop);
+    }, noop);
 }
 }

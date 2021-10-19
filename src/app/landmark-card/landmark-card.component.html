@@ -1,23 +1,6 @@
-<!-- <app-full-screen-img *ngIf="viewerOpen" [imgSrc]="landmark.photo.url" [open]="viewerOpen" (close)="viewerOpen = false"></app-full-screen-img>
-<div class="outer-wrapper py-5" [ngClass]="{'shake shadow p-5': !isInFullDescription}">
-    <h2 class="title text-center" (click)="onTitleClick()" >{{landmark.title}}</h2>
-    <div class="d-flex justify-content-center pt-3 inner-wrapper">
-        <div class="img-wrapper" [ngClass]="{'justify-content-center': !isInFullDescription, 'img-wrapper-full-page': isInFullDescription}">
-            <img class="photo-thumb"  [src]="landmark.photo_thumb.url" (click)="viewerOpen = true">
-            <a *ngIf="isInFullDescription" class="link" [href]="landmark.url" target="blank" >[Official page]</a>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="short-info ps-3">
-                {{landmark.short_info}}
-            </p>
-        </div>
-    </div>
-</div> -->
-
-
 <app-full-screen-img *ngIf="viewerOpen" [imgSrc]="landmark.photo.url" [open]="viewerOpen" (close)="viewerOpen = false"></app-full-screen-img>
 <div class="d-flex outer-wrapper-description" [ngClass]="{'shake shadow outer-wrapper': !isInFullDescription}">
-    <div class="img-wrapper" [ngClass]="{'': !isInFullDescription, 'img-wrapper-full-page': isInFullDescription}">
+    <div class="img-wrapper" [ngClass]="{'img-wrapper-full-page': isInFullDescription}">
         <img class="photo-thumb-zoom-in" [ngClass]="{'photo-thumb': !isInFullDescription}" [src]="landmark.photo_thumb.url" (click)="viewerOpen = true">
         <a *ngIf="isInFullDescription" class="link" [href]="landmark.url" target="blank" >[Official page]</a>
     </div>

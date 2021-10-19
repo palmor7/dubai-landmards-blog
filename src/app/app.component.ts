@@ -13,6 +13,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 export class AppComponent implements OnInit {
   isLoggedIn: boolean;
   isInHomePage: boolean;
+  loading = false;
 
   constructor(private modalService: NgbModal, public landmarksService: LandmarksService, private router: Router) {}
   
@@ -31,10 +32,12 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
+    this.loading = true;
     this.landmarksService.logout().subscribe(() => {
       localStorage.removeItem('session-token');
       this.landmarksService.checkUserLoggedIn();
       this.router.navigate(['/']);
+      this.loading = false;
     });
   }
 }

@@ -36,7 +36,7 @@ import { UpdateLandmarkFormComponent } from './update-landmark-form/update-landm
     RouterModule.forRoot([]),
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: ''
+      apiKey: 'AIzaSyAQUuRaum-P7lzfdLAAnVKu1SZJUdv4vME'
     }),
     NgbModule,
     ReactiveFormsModule,

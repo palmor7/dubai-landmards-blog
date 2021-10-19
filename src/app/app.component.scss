@@ -6,12 +6,6 @@
     margin: auto;
 }
 
-// .nav-bg-img {
-//     background-image: url(../assets/palm-jumeirah.jpg);
-//     background-size: cover;
-//     background-position: center;
-// }
-
 .logo {
     height: 180px;
 }
@@ -75,4 +69,10 @@
     max-width: none;
     transform: translate3d(0px, 0px, 0px);
     opacity: 0.6;
+}
+
+.loading {
+    position: absolute;
+    right: 32px;
+    top: 10px; 
 }
